@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <!--    指定文件目录位置、名称，未使用到*-file-appender可省略-->
+    <springProperty scope="context" name="log_path" source="logging.file.path"
+                    defaultValue="./"/>
+    <springProperty scope="context" name="file_name" source="logging.file.name"
+                    defaultValue="./"/>
+
+    <!--    logback-base-file.xml 与logback-skywalking.xml 同时只能引用一个，
+    logback-skywalking-file.xml 会额外打印 traceId-->
+        <include resource="logback-base-console.xml"/>
+<!--    <include resource="logback-skywalking.xml"/>-->
+
+    <root level="info">
+<!--        <appender-ref ref="file-appender-skywalking"/>-->
+<!--        <appender-ref ref="log-appender-skywalking"/>-->
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>

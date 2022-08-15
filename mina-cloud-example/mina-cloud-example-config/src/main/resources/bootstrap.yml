@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: mina-config
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        username: nacos
+        password: nacos
+        namespace: 52e671fa-26ea-48b5-938b-865e935f527f
+        group: mina
+        file-extension: yaml
+        shared-configs[0]:
+          data-id: mina-common-config.yaml
+          group: mina
+          refresh: true

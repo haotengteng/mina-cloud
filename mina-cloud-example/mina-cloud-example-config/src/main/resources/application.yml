@@ -1,0 +1,4 @@
+logging:
+  file:
+    path: ./
+    name: mina-example-web-config.log
