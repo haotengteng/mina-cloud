@@ -1,6 +1,6 @@
 package cn.mina.cloud.config.controller;
 
-import cn.mina.cloud.config.MinaConfigContext;
+import cn.mina.cloud.config.MinaCloudConfigContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,14 +29,14 @@ public class FooController {
     private  ExampleConfig exampleConfig;
 
     @Autowired
-    private MinaConfigContext minaConfigContext;
+    private MinaCloudConfigContext minaCloudConfigContext;
 
     @GetMapping(path = "hello")
     public String sayHello() throws UnknownHostException {
         log.info("nacos-config 监听到配置信息为:{}", name);
         log.info("nacos-config 监听到配置信息为1:{}", exampleConfig.getName());
         log.info("nacos-config 监听到配置信息为:{}", address);
-        log.info("nacos-config 监听到配置信息为:{}", minaConfigContext.getProperty("user.name"));
+        log.info("nacos-config 监听到配置信息为:{}", minaCloudConfigContext.getProperty("user.name"));
 
         String ip = getLocalIP();
         return ip + ": Hello docker!";

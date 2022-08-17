@@ -1,13 +1,13 @@
-package cn.mina.cloud.config;
+package cn.mina.cloud.example.discovery.consumer;
 
 import cn.mina.boot.context.MinaBootApplication;
-import cn.mina.cloud.config.controller.ExampleConfig;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
-@EnableConfigurationProperties(ExampleConfig.class)
+@EnableDiscoveryClient
+@EnableFeignClients
 public class MavenDemoArchetypeApplication {
 
 	public static void main(String[] args) {

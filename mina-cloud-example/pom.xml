@@ -14,6 +14,8 @@
 
     <modules>
         <module>mina-cloud-example-config</module>
+        <module>mina-cloud-example-discovery-provider</module>
+        <module>mina-cloud-example-discovery-consumer</module>
     </modules>
 
 </project>

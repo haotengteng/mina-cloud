@@ -10,8 +10,8 @@ import org.springframework.core.env.Environment;
 /**
  * @author Created by haoteng on 2022/7/26.pri
  */
-public class MinaConfigContext implements ApplicationContextAware {
-    private static Logger log = LoggerFactory.getLogger(MinaConfigContext.class);
+public class MinaCloudConfigContext implements ApplicationContextAware {
+    private static Logger log = LoggerFactory.getLogger(MinaCloudConfigContext.class);
 
     private Environment environment;
 

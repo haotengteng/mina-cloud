@@ -13,11 +13,11 @@
         <module>mina-cloud-dependencies</module>
     </modules>
     <packaging>pom</packaging>
-
     <name>mina-cloud-parent</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
     </properties>
     <dependencyManagement>
         <dependencies>

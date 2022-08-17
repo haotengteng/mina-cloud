@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 public class MinaConfigAutoConfiguration {
 
     @Bean
-    public MinaConfigContext minaConfigContext() {
-        return new MinaConfigContext();
+    public MinaCloudConfigContext minaConfigContext() {
+        return new MinaCloudConfigContext();
     }
 }

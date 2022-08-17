@@ -1,0 +1,6 @@
+mina:
+  cloud:
+    openfeign:
+      log:
+        enable: true
+        level: FULL

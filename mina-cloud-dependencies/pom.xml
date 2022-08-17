@@ -11,6 +11,7 @@
 
     <properties>
         <mina.cloud.version>0.0.1-SNAPSHOT</mina.cloud.version>
+        <caffeine.version>2.8.8</caffeine.version>
     </properties>
 
     <dependencyManagement>
@@ -19,6 +20,16 @@
                 <groupId>cn.mina.cloud</groupId>
                 <artifactId>mina-cloud-config</artifactId>
                 <version>${mina.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-discovery</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
+            <!--            引入caffeine使springcloudbalance使用caffeine缓存-->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
             </dependency>
         </dependencies>
     </dependencyManagement>
