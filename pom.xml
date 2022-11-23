@@ -11,13 +11,16 @@
         <module>mina-cloud-gateway</module>
         <module>mina-cloud-example</module>
         <module>mina-cloud-dependencies</module>
+        <module>mina-cloud-openfeign</module>
+        <module>mina-cloud-dubbo</module>
+        <module>mina-cloud-loadbalancer</module>
     </modules>
     <packaging>pom</packaging>
     <name>mina-cloud-parent</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
+        <java.version>11</java.version>
     </properties>
     <dependencyManagement>
         <dependencies>

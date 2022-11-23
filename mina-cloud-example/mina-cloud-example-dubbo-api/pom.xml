@@ -4,18 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.mina.cloud</groupId>
-        <artifactId>mina-cloud-parent</artifactId>
+        <artifactId>mina-cloud-example</artifactId>
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mina-cloud-discovery</artifactId>
-    <name>mina-cloud-discovery</name>
-    <description>Demo project for Spring Boot</description>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-    </dependencies>
+    <artifactId>mina-cloud-example-dubbo-api</artifactId>
+    <name>mina-cloud-example-dubbo-api</name>
 
 </project>

@@ -7,15 +7,19 @@
         <artifactId>mina-cloud-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mina-cloud-discovery</artifactId>
-    <name>mina-cloud-discovery</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>mina-cloud-loadbalancer</artifactId>
+    <name>mina-cloud-loadbalancer</name>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-    </dependencies>
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+    </dependency>
+    <!--引入caffeine使springcloudbalance使用caffeine缓存-->
+    <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+    </dependency>
+</dependencies>
 
 </project>

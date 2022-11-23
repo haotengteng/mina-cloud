@@ -7,7 +7,7 @@ spring:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: nacos
-        namespace: 52e671fa-26ea-48b5-938b-865e935f527f
+#        namespace: 52e671fa-26ea-48b5-938b-865e935f527f
         group: mina-cloud #项目名
 project:
   name: mina-consumer

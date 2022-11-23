@@ -16,6 +16,9 @@
         <module>mina-cloud-example-config</module>
         <module>mina-cloud-example-discovery-provider</module>
         <module>mina-cloud-example-discovery-consumer</module>
+        <module>mina-cloud-example-dubbo-provider</module>
+        <module>mina-cloud-example-dubbo-api</module>
+        <module>mina-cloud-example-dubbo-consumer</module>
     </modules>
 
 </project>

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mina-cloud-dubbo-consumer
+dubbo:
+  application:
+    name: ${spring.application.name}
+    metadata-type: local
+    # instance interface  all：缺省
+    register-mode: instance
+  registry:
+    address: nacos://127.0.0.1:8848
+    username: nacos
+    password: nacos
+    parameters:
+      namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
+    group: mina-cloud-dubbo
+    use-as-config-center: false
+    # dubbo 元数据不用做元数据中心，否则会再naocs 配置管理是上创建配置。
+    use-as-metadata-center: false
+  protocol:
+    name: tri

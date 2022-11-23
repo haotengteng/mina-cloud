@@ -7,15 +7,13 @@
         <artifactId>mina-cloud-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mina-cloud-discovery</artifactId>
-    <name>mina-cloud-discovery</name>
-    <description>Demo project for Spring Boot</description>
+    <artifactId>mina-cloud-openfeign</artifactId>
+    <name>mina-cloud-openfeign</name>
 
     <dependencies>
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
     </dependencies>
-
 </project>

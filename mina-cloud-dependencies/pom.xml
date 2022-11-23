@@ -12,6 +12,10 @@
     <properties>
         <mina.cloud.version>0.0.1-SNAPSHOT</mina.cloud.version>
         <caffeine.version>2.8.8</caffeine.version>
+        <nacos.discovery.starter.version>3.1.2</nacos.discovery.starter.version>
+        <dubbo.starter.version>3.1.2</dubbo.starter.version>
+        <dubbo-rpc-triple.version>3.1.2</dubbo-rpc-triple.version>
+        <nacos-client.version>2.1.2</nacos-client.version>
     </properties>
 
     <dependencyManagement>
@@ -26,11 +30,48 @@
                 <artifactId>mina-cloud-discovery</artifactId>
                 <version>${mina.cloud.version}</version>
             </dependency>
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-openfeign</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-loadbalancer</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-dubbo</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>nacos-discovery-spring-boot-starter</artifactId>
+                <version>${nacos.discovery.starter.version}</version>
+            </dependency>
             <!--            引入caffeine使springcloudbalance使用caffeine缓存-->
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-rpc-triple</artifactId>
+                <version>${dubbo-rpc-triple.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 </project>
