@@ -1,7 +1,6 @@
 package cn.mina.cloud.example.dubbo.consumer;
 
-import cn.mina.boot.context.MinaBootApplication;
-import cn.mina.boot.web.common.MinaBootWebApplication;
+import cn.mina.boot.MinaBootApplication;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

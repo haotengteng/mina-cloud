@@ -7,8 +7,8 @@ spring:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: nacos
-#        namespace: 52e671fa-26ea-48b5-938b-865e935f527f
-        group: mina-cloud #???
+        namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
+        group: mina-cloud1
 project:
-  name: mina-provider
+  name: ${spring.application.name}
 

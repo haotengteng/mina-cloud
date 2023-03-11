@@ -71,7 +71,11 @@
                 <artifactId>nacos-client</artifactId>
                 <version>${nacos-client.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-gateway</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

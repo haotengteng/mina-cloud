@@ -1,0 +1,10 @@
+mina:
+  cloud:
+    gateway:
+      logger:
+        enable: false
+      canary:
+        enable: true
+        rule:
+          type: ip
+          ips: 192.168.0.104

@@ -1,6 +1,6 @@
 package cn.mina.cloud.example.discovery.consumer.service.fallback;
 
-import cn.mina.boot.web.common.context.ClientResult;
+import cn.mina.boot.web.common.context.MinaWebResult;
 import cn.mina.boot.web.common.context.MinaWebTools;
 import cn.mina.cloud.example.discovery.consumer.service.FooService;
 import org.springframework.stereotype.Service;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class FooServiceFallback implements FooService {
     @Override
-    public ClientResult<String> getFoo(String ping) {
+    public MinaWebResult<String> getFoo(String ping) {
         return MinaWebTools.response.about("fallback service");
     }
 
     @Override
-    public ClientResult<String> fallback(String ping) {
+    public MinaWebResult<String> fallback(String ping) {
         return MinaWebTools.response.about("fallback service111");
     }
 }

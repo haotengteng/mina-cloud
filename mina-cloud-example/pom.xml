@@ -19,6 +19,7 @@
         <module>mina-cloud-example-dubbo-provider</module>
         <module>mina-cloud-example-dubbo-api</module>
         <module>mina-cloud-example-dubbo-consumer</module>
+        <module>mina-cloud-example-gateway</module>
     </modules>
 
 </project>

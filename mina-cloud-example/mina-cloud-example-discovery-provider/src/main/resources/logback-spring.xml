@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+
+    <!--    logback-base-file.xml 与logback-skywalking.xml 同时只能引用一个，
+    logback-skywalking-file.xml 会额外打印 traceId-->
+    <!--    <include resource="logback-skywalking-file.xml"/>-->
+    <include resource="logback-base-console.xml"/>
+
+    <root level="info">
+        <appender-ref ref="console-appender"/>
+    </root>
+
+</configuration>

@@ -1,7 +1,7 @@
 package cn.mina.cloud.example.discovery.consumer.controller;
 
 import cn.mina.boot.common.util.JsonUtil;
-import cn.mina.boot.web.common.context.ClientResult;
+import cn.mina.boot.web.common.context.MinaWebResult;
 import cn.mina.boot.web.common.context.MinaWebTools;
 import cn.mina.cloud.example.discovery.consumer.service.FooService;
 import lombok.extern.slf4j.Slf4j;
@@ -24,19 +24,17 @@ public class FooController implements EnvironmentAware {
     private FooService fooService;
 
 
-
     @GetMapping("ping")
-    public ClientResult<String> test() {
-        ClientResult<String> pong = fooService.getFoo("ping");
+    public MinaWebResult<String> test() {
+        MinaWebResult<String> pong = fooService.getFoo("ping");
         log.info(JsonUtil.toJSONString(pong));
         return MinaWebTools.response.success();
     }
 
 
-
     @GetMapping("fallback")
-    public ClientResult<String> fallback() {
-        ClientResult<String> pong = fooService.fallback("ping");
+    public MinaWebResult<String> fallback() {
+        MinaWebResult<String> pong = fooService.fallback("ping");
         log.info(JsonUtil.toJSONString(pong));
         return MinaWebTools.response.success();
     }

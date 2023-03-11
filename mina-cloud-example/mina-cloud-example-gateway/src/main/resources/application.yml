@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 注册到的nacos地址
+        username: nacos
+        password: nacos
+        namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
+        group: mina-cloud1
+    gateway:
+      discovery:
+        locator:
+          enabled: true               # 开启从注册中心动态创建路由的功能，利用服务名进行路由
+          lower-case-service-id: true # 将请求路径上的服务名配置为小写
+      # 配置动态路由
+      routes:
+        - id: mina-provider            # 唯一路由表示，没有实际作用不重复就好，建议配合服务名
+          uri: lb://mina-provider      # 匹配后提供服务的路由地址，lb后跟提供服务的微服务的名，不要写错！！！
+          # 过滤路径应用名，方法一
+#          predicates:
+#            - Path=/mina_gateway/**      # 以`mina-gateway`开头的请求都负载到`mina-provider`服务
+#          filters:
+#            - RewritePath=/mina_gateway(?<segment>/?.*), $\{segment}  # 重写请求路径,例如 http://127.0.0.1:8090/mina-gateway/foo/ping -> http://127.0.0.1:8080/foo/ping
+          # 过滤路径应用名，方法二
+          predicates:
+            - Path=/mina_gateway/**
+          filters:
+            - StripPrefix=1
+---
+spring:
+  application:
+    name: mina-gateway
+server:
+  port: 8888

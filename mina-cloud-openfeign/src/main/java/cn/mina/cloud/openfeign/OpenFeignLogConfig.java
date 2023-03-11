@@ -26,7 +26,7 @@ public class OpenFeignLogConfig {
      * @return
      */
     @Bean
-    @ConditionalOnProperty(prefix = "mina.cloud.openfeign.log", name = "enable", havingValue = "true", matchIfMissing = false)
+    @ConditionalOnProperty(prefix = "mina.cloud.openfeign.log", name = "enable", havingValue = "true", matchIfMissing = true)
     Logger.Level feignLoggerLeave() {
         switch (openFeignProperties.getLevel()) {
             case "NONE":

@@ -10,16 +10,25 @@
     <artifactId>mina-cloud-loadbalancer</artifactId>
     <name>mina-cloud-loadbalancer</name>
 
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-    </dependency>
-    <!--引入caffeine使springcloudbalance使用caffeine缓存-->
-    <dependency>
-        <groupId>com.github.ben-manes.caffeine</groupId>
-        <artifactId>caffeine</artifactId>
-    </dependency>
-</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <!--引入caffeine使springcloudbalance使用caffeine缓存-->
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.mina.boot</groupId>
+            <artifactId>mina-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.mina.boot</groupId>
+            <artifactId>mina-boot-web-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
 </project>
