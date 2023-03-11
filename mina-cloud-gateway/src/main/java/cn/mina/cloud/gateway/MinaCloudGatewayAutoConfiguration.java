@@ -9,7 +9,6 @@ import cn.mina.cloud.gateway.filter.GatewayLogFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -54,7 +53,7 @@ public class MinaCloudGatewayAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnBean(value = CanaryLoadBalancerClientFilter.class)
-    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary.rule", name = "type", havingValue = "default", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "type", havingValue = "default", matchIfMissing = true)
     public CanaryLoadbalancerRule defaultCanaryLoadbalancerRule() {
         return new DefaultCanaryLoadbalancerRule();
     }
@@ -67,7 +66,7 @@ public class MinaCloudGatewayAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnBean(value = CanaryLoadBalancerClientFilter.class)
-    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary.rule", name = "type", havingValue = "ip")
+    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "type", havingValue = "ip")
     public CanaryLoadbalancerRule ipCanaryLoadbalancerRule() {
         return new IPCanaryLoadbalancerRule();
     }

@@ -34,7 +34,7 @@ public class MinaCloudLoadBalanceClientConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnLoadBalancerCanary
-    @ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary", name = "type", havingValue = "default", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary.type", name = "enable", havingValue = "default", matchIfMissing = true)
     public ReactorLoadBalancer<ServiceInstance> defaultCanaryReactorServiceInstanceLoadBalancer(Environment environment,
                                                                                                 LoadBalancerClientFactory loadBalancerClientFactory) {
         String name = environment.getProperty(LoadBalancerClientFactory.PROPERTY_NAME);
@@ -45,7 +45,7 @@ public class MinaCloudLoadBalanceClientConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnLoadBalancerCanary
-    @ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary", name = "type", havingValue = "ip")
+    @ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary.type", name = "enable", havingValue = "ip")
     public ReactorLoadBalancer<ServiceInstance> ipCanaryReactorServiceInstanceLoadBalancer(Environment environment,
                                                                                            LoadBalancerClientFactory loadBalancerClientFactory) {
         String name = environment.getProperty(LoadBalancerClientFactory.PROPERTY_NAME);

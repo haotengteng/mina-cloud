@@ -1,3 +1,5 @@
+
+# 注册中心/配置中心相关配置
 spring:
   cloud:
     nacos:
@@ -7,6 +9,10 @@ spring:
         password: nacos
         namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
         group: mina-cloud1
+---
+# 网关基础功能配置
+spring:
+  cloud:
     gateway:
       discovery:
         locator:
@@ -32,3 +38,31 @@ spring:
     name: mina-gateway
 server:
   port: 8888
+---
+# 网关扩展功能（日志、金丝雀）相关配置
+mina:
+  cloud:
+    gateway:
+      logger:
+        # 启用网关日志，默认启用
+        enable: true
+      canary:
+        # 启用金丝雀负载，对符合条件的流量打标，默认关闭
+        enable: true
+#        # 使用指定ip模式，默认透传请求头方式
+#        type: ip
+---
+# 功能负载均衡金丝雀功能相关配置
+mina:
+  cloud:
+    loadbalancer:
+      canary:
+        # 启用金丝雀路由，默认关闭
+        enable: true
+        # 指定严格模式（默认），LOOSE 宽松模式采取优先使用金丝雀实例的策略
+        mode: STRICT
+#        type:
+#          # 指定按照ip模式路由
+#          enable: ip
+#          # 指定金丝雀服务器，多个ip用","分隔
+#          ip-address: 192.168.0.104

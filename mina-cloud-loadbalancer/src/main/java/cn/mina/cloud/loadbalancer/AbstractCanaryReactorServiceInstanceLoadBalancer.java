@@ -1,22 +1,22 @@
 package cn.mina.cloud.loadbalancer;
 
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.loadbalancer.*;
+import org.springframework.cloud.client.loadbalancer.DefaultResponse;
+import org.springframework.cloud.client.loadbalancer.EmptyResponse;
+import org.springframework.cloud.client.loadbalancer.Request;
+import org.springframework.cloud.client.loadbalancer.Response;
 import org.springframework.cloud.loadbalancer.core.NoopServiceInstanceListSupplier;
 import org.springframework.cloud.loadbalancer.core.ReactorServiceInstanceLoadBalancer;
 import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
 import org.springframework.core.env.Environment;
-import org.springframework.http.HttpHeaders;
 import org.springframework.util.CollectionUtils;
 import reactor.core.publisher.Mono;
 
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
 
 /**
  * 自定义金丝雀负载均衡策略
@@ -25,8 +25,7 @@ import java.util.stream.Collectors;
  * @author Created by haoteng on 2023/3/8.
  */
 public abstract class AbstractCanaryReactorServiceInstanceLoadBalancer implements ReactorServiceInstanceLoadBalancer {
-
-    private static final Log log = LogFactory.getLog(AbstractCanaryReactorServiceInstanceLoadBalancer.class);
+    private static final Logger log = LoggerFactory.getLogger(IPCanaryReactorServiceInstanceLoadBalancer.class);
 
     protected static final String LOADBALANCER_MODE = "mina.cloud.loadbalancer.canary.mode";
     final AtomicInteger position = new AtomicInteger(0);
@@ -51,6 +50,7 @@ public abstract class AbstractCanaryReactorServiceInstanceLoadBalancer implement
 
     /**
      * 实现获取服务实例方法
+     *
      * @param serviceInstances
      * @param request
      * @return
@@ -74,7 +74,7 @@ public abstract class AbstractCanaryReactorServiceInstanceLoadBalancer implement
             case STRICT:
                 return getRoundRobinInstance(canaryInstances);
             default:
-                log.warn("Not supported loadBalance mode :{}" + mode);
+                log.warn("Not supported loadBalance mode :{}", mode);
                 return new EmptyResponse();
         }
     }
@@ -85,7 +85,7 @@ public abstract class AbstractCanaryReactorServiceInstanceLoadBalancer implement
     protected Response<ServiceInstance> getRoundRobinInstance(List<ServiceInstance> instances) {
         // 如果没有可用节点，则返回空
         if (instances.isEmpty()) {
-            log.warn("No servers available for service: " + serviceId);
+            log.warn("No servers available for service: {}", serviceId);
             return new EmptyResponse();
         }
         // 每一次计数器都自动+1，实现轮询的效果

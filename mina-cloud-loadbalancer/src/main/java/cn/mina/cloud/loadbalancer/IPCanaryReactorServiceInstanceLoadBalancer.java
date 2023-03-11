@@ -1,8 +1,8 @@
 package cn.mina.cloud.loadbalancer;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.*;
@@ -24,9 +24,9 @@ import java.util.stream.Stream;
  */
 public class IPCanaryReactorServiceInstanceLoadBalancer extends AbstractCanaryReactorServiceInstanceLoadBalancer {
 
-    private static final Log log = LogFactory.getLog(IPCanaryReactorServiceInstanceLoadBalancer.class);
+    private static final Logger log = LoggerFactory.getLogger(IPCanaryReactorServiceInstanceLoadBalancer.class);
     public static final String DEFAULT_CANARY_RULE_HEADER = "Default-Canary";
-    private static final String LOADBALANCER_CANARY_IPS = "mina.cloud.gateway.canary.rule.ips";
+    public static final String LOADBALANCER_CANARY_IPS = "mina.cloud.loadbalancer.canary.type.ip-address";
 
     public IPCanaryReactorServiceInstanceLoadBalancer(ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider,
                                                       String serviceId,
@@ -43,7 +43,7 @@ public class IPCanaryReactorServiceInstanceLoadBalancer extends AbstractCanaryRe
     private Response<ServiceInstance> getInstanceResponse(List<ServiceInstance> instances, Request request) {
         // 注册中心无可用实例 返回空
         if (CollectionUtils.isEmpty(instances)) {
-            log.warn("No instance available {}");
+            log.warn("No instance available for service: {}", super.serviceId);
             return new EmptyResponse();
         }
         DefaultRequestContext context = (DefaultRequestContext) request.getContext();

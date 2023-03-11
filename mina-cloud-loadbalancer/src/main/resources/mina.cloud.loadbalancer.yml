@@ -1,7 +1,0 @@
-mina:
-  cloud:
-    loadbalancer:
-      canary:
-        enable: true
-        mode: STRICT
-        type: ip
