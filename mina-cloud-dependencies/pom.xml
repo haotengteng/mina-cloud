@@ -42,7 +42,17 @@
             </dependency>
             <dependency>
                 <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-sentinel-gateway</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
                 <artifactId>mina-cloud-dubbo</artifactId>
+                <version>${mina.cloud.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.mina.cloud</groupId>
+                <artifactId>mina-cloud-sentinel-client</artifactId>
                 <version>${mina.cloud.version}</version>
             </dependency>
             <dependency>

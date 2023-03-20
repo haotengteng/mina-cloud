@@ -1,5 +1,8 @@
 package cn.mina.cloud.loadbalancer;
 
+import cn.mina.cloud.loadbalancer.canary.ConditionalOnLoadBalancerCanary;
+import cn.mina.cloud.loadbalancer.canary.DefaultCanaryReactorServiceInstanceLoadBalancer;
+import cn.mina.cloud.loadbalancer.canary.IPCanaryReactorServiceInstanceLoadBalancer;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

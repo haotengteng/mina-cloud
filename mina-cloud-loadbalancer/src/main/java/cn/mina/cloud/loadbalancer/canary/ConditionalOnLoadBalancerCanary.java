@@ -1,4 +1,4 @@
-package cn.mina.cloud.loadbalancer;
+package cn.mina.cloud.loadbalancer.canary;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 

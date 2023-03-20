@@ -1,0 +1,24 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: mina-cloud-example-sentinel
+
+  #  -Dproject.name=mina-cloud-example-sentinel
+  #  -Dcsp.sentinel.dashboard.server=localhost:8858
+  # 客户端 请求 sentinel dashboard api 端口 (可省略)
+#  -Dcsp.sentinel.api.port=8719
+#某些环境下本地运行 Dubbo 服务还需要加上-Djava.net.preferIPv4Stack=true
+#  -Djava.net.preferIPv4Stack=true
+---
+spring:
+  application:
+    name: mina-sentienl
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+        namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
+        group: mina-cloud1

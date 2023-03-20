@@ -14,6 +14,7 @@
         <module>mina-cloud-openfeign</module>
         <module>mina-cloud-dubbo</module>
         <module>mina-cloud-loadbalancer</module>
+        <module>mina-cloud-sentinel</module>
     </modules>
     <packaging>pom</packaging>
     <name>mina-cloud-parent</name>

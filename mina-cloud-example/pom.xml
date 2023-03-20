@@ -20,6 +20,7 @@
         <module>mina-cloud-example-dubbo-api</module>
         <module>mina-cloud-example-dubbo-consumer</module>
         <module>mina-cloud-example-gateway</module>
+        <module>mina-cloud-example-sentinel</module>
     </modules>
 
 </project>

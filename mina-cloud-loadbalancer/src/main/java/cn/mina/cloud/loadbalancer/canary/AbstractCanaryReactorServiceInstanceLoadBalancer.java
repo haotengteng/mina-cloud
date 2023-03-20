@@ -1,4 +1,4 @@
-package cn.mina.cloud.loadbalancer;
+package cn.mina.cloud.loadbalancer.canary;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

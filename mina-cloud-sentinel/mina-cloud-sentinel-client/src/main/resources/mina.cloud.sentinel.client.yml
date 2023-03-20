@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8858
+      http-method-specify: true
+# 打开 Sentinel 对 Feign 的支持
+feign:
+  sentinel:
+    enabled: true
+

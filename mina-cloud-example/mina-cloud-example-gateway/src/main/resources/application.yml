@@ -48,7 +48,7 @@ mina:
         enable: true
       canary:
         # 启用金丝雀负载，对符合条件的流量打标，默认关闭
-        enable: true
+        enable: false
 #        # 使用指定ip模式，默认透传请求头方式
 #        type: ip
 ---
@@ -58,7 +58,7 @@ mina:
     loadbalancer:
       canary:
         # 启用金丝雀路由，默认关闭
-        enable: true
+        enable: false
         # 指定严格模式（默认），LOOSE 宽松模式采取优先使用金丝雀实例的策略
         mode: STRICT
 #        type:

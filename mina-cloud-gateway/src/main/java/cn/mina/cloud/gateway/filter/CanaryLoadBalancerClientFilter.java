@@ -15,7 +15,7 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
-import static cn.mina.cloud.loadbalancer.DefaultCanaryReactorServiceInstanceLoadBalancer.DEFAULT_CANARY_RULE_HEADER;
+import static cn.mina.cloud.loadbalancer.canary.DefaultCanaryReactorServiceInstanceLoadBalancer.DEFAULT_CANARY_RULE_HEADER;
 
 
 /**

@@ -4,7 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.env.Environment;
 import org.springframework.http.server.reactive.ServerHttpRequest;
 
-import static cn.mina.cloud.loadbalancer.IPCanaryReactorServiceInstanceLoadBalancer.LOADBALANCER_CANARY_IPS;
+import static cn.mina.cloud.loadbalancer.canary.IPCanaryReactorServiceInstanceLoadBalancer.LOADBALANCER_CANARY_IPS;
 
 /**
  * 流量打标规则，按照Ip

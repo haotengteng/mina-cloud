@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Duration;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author Created by haoteng on 2022/8/15.
@@ -19,8 +21,9 @@ import java.time.Duration;
 public class FooController {
 
     @GetMapping("ping")
-    public MinaWebResult<String> test(String ping) {
+    public MinaWebResult<String> test(String ping) throws InterruptedException {
 //        throw new MinaGlobalException("ceshi");
+//        TimeUnit.SECONDS.sleep(1);
         return MinaWebTools.response.success("pong");
     }
 

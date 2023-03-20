@@ -4,27 +4,28 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>cn.mina.cloud</groupId>
-        <artifactId>mina-cloud-example</artifactId>
+        <artifactId>mina-cloud-sentinel</artifactId>
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
     </parent>
-    <artifactId>mina-cloud-example-gateway</artifactId>
-    <name>mina-cloud-example-gateway</name>
+    <artifactId>mina-cloud-sentinel-gateway</artifactId>
+    <name>mina-cloud-sentinel-gateway</name>
     <dependencies>
         <dependency>
             <groupId>cn.mina.boot</groupId>
             <artifactId>mina-boot-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.mina.cloud</groupId>
-            <artifactId>mina-cloud-gateway</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.mina.cloud</groupId>
-            <artifactId>mina-cloud-loadbalancer</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>cn.mina.cloud</groupId>
-            <artifactId>mina-cloud-sentinel-gateway</artifactId>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
         </dependency>
     </dependencies>
 
