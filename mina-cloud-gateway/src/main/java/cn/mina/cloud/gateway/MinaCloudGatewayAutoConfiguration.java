@@ -2,8 +2,8 @@ package cn.mina.cloud.gateway;
 
 import cn.mina.boot.support.YmlPropertySourceFactory;
 import cn.mina.cloud.gateway.canary.CanaryLoadbalancerRule;
-import cn.mina.cloud.gateway.canary.DefaultCanaryLoadbalancerRule;
-import cn.mina.cloud.gateway.canary.IPCanaryLoadbalancerRule;
+import cn.mina.cloud.gateway.canary.DefaultHeaderCanaryLoadbalancerRule;
+import cn.mina.cloud.gateway.canary.DefaultHostCanaryLoadbalancerRuleAbstract;
 import cn.mina.cloud.gateway.filter.CanaryLoadBalancerClientFilter;
 import cn.mina.cloud.gateway.filter.GatewayLogFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -40,7 +40,6 @@ public class MinaCloudGatewayAutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean
-    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "enable", havingValue = "true")
     public CanaryLoadBalancerClientFilter canaryLoadBalancerClientFilter() {
         return new CanaryLoadBalancerClientFilter();
     }
@@ -53,9 +52,9 @@ public class MinaCloudGatewayAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnBean(value = CanaryLoadBalancerClientFilter.class)
-    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "type", havingValue = "default", matchIfMissing = true)
-    public CanaryLoadbalancerRule defaultCanaryLoadbalancerRule() {
-        return new DefaultCanaryLoadbalancerRule();
+    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary.rule", name = "enable", havingValue = "header", matchIfMissing = true)
+    public CanaryLoadbalancerRule headerCanaryLoadbalancerRule() {
+        return new DefaultHeaderCanaryLoadbalancerRule();
     }
 
     /**
@@ -66,9 +65,9 @@ public class MinaCloudGatewayAutoConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnBean(value = CanaryLoadBalancerClientFilter.class)
-    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "type", havingValue = "ip")
-    public CanaryLoadbalancerRule ipCanaryLoadbalancerRule() {
-        return new IPCanaryLoadbalancerRule();
+    @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary.rule", name = "enable", havingValue = "host")
+    public CanaryLoadbalancerRule hostCanaryLoadbalancerRule() {
+        return new DefaultHostCanaryLoadbalancerRuleAbstract();
     }
 
 

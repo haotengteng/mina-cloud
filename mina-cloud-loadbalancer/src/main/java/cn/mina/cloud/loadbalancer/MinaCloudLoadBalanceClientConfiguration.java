@@ -1,8 +1,9 @@
 package cn.mina.cloud.loadbalancer;
 
+import cn.mina.cloud.loadbalancer.canary.CanaryReactorServiceInstanceLoadBalancer;
 import cn.mina.cloud.loadbalancer.canary.ConditionalOnLoadBalancerCanary;
-import cn.mina.cloud.loadbalancer.canary.DefaultCanaryReactorServiceInstanceLoadBalancer;
-import cn.mina.cloud.loadbalancer.canary.IPCanaryReactorServiceInstanceLoadBalancer;
+import cn.mina.cloud.loadbalancer.canary.MetadataCanaryLoadBalancerRule;
+import cn.mina.cloud.loadbalancer.canary.HostCanaryLoadBalancerRule;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -37,22 +38,10 @@ public class MinaCloudLoadBalanceClientConfiguration {
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnLoadBalancerCanary
-    @ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary.type", name = "enable", havingValue = "default", matchIfMissing = true)
     public ReactorLoadBalancer<ServiceInstance> defaultCanaryReactorServiceInstanceLoadBalancer(Environment environment,
                                                                                                 LoadBalancerClientFactory loadBalancerClientFactory) {
         String name = environment.getProperty(LoadBalancerClientFactory.PROPERTY_NAME);
-        return new DefaultCanaryReactorServiceInstanceLoadBalancer(
-                loadBalancerClientFactory.getLazyProvider(name, ServiceInstanceListSupplier.class), name, environment);
-    }
-
-    @Bean
-    @ConditionalOnMissingBean
-    @ConditionalOnLoadBalancerCanary
-    @ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary.type", name = "enable", havingValue = "ip")
-    public ReactorLoadBalancer<ServiceInstance> ipCanaryReactorServiceInstanceLoadBalancer(Environment environment,
-                                                                                           LoadBalancerClientFactory loadBalancerClientFactory) {
-        String name = environment.getProperty(LoadBalancerClientFactory.PROPERTY_NAME);
-        return new IPCanaryReactorServiceInstanceLoadBalancer(
+        return new CanaryReactorServiceInstanceLoadBalancer(
                 loadBalancerClientFactory.getLazyProvider(name, ServiceInstanceListSupplier.class), name, environment);
     }
 

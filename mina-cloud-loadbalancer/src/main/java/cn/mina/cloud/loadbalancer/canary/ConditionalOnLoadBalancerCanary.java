@@ -12,6 +12,6 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-@ConditionalOnProperty(prefix = "mina.cloud.loadbalancer.canary", name = "enable", havingValue = "true")
+@ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "enable", havingValue = "true")
 public @interface ConditionalOnLoadBalancerCanary {
 }

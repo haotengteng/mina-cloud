@@ -18,6 +18,7 @@ public class ConsumerController {
 
     @GetMapping("foo")
     private String foo() {
+        System.out.println("=========consumer===========");
         return service1.foo("foo");
     }
 }

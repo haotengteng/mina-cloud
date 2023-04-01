@@ -9,5 +9,5 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
  */
 public interface CanaryLoadbalancerRule {
 
-    String getCanary(ServerHttpRequest request, Environment environment);
+    CanaryRuleResult getCanary(ServerHttpRequest request, Environment environment);
 }

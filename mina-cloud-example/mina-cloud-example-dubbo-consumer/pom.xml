@@ -12,6 +12,10 @@
 
 <dependencies>
     <dependency>
+        <groupId>cn.mina.cloud</groupId>
+        <artifactId>mina-cloud-common</artifactId>
+    </dependency>
+    <dependency>
         <groupId>cn.mina.boot</groupId>
         <artifactId>mina-boot-web-starter</artifactId>
     </dependency>

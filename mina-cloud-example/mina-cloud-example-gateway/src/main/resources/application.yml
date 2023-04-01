@@ -8,7 +8,7 @@ spring:
         username: nacos
         password: nacos
         namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
-        group: mina-cloud1
+        group: mina-cloud
 ---
 # 网关基础功能配置
 spring:
@@ -20,8 +20,8 @@ spring:
           lower-case-service-id: true # 将请求路径上的服务名配置为小写
       # 配置动态路由
       routes:
-        - id: mina-provider            # 唯一路由表示，没有实际作用不重复就好，建议配合服务名
-          uri: lb://mina-provider      # 匹配后提供服务的路由地址，lb后跟提供服务的微服务的名，不要写错！！！
+        - id: mina-consumer            # 唯一路由表示，没有实际作用不重复就好，建议配合服务名
+          uri: lb://mina-consumer      # 匹配后提供服务的路由地址，lb后跟提供服务的微服务的名，不要写错！！！
           # 过滤路径应用名，方法一
 #          predicates:
 #            - Path=/mina_gateway/**      # 以`mina-gateway`开头的请求都负载到`mina-provider`服务
@@ -30,6 +30,19 @@ spring:
           # 过滤路径应用名，方法二
           predicates:
             - Path=/mina_gateway/**
+          filters:
+            - StripPrefix=1
+
+        - id: mina-cloud-dubbo-provider
+          uri: lb://mina-cloud-dubbo-provider
+          predicates:
+            - Path=/mina_gateway_dubbo/**
+          filters:
+            - StripPrefix=1
+        - id: mina-cloud-dubbo-consumer
+          uri: lb://mina-cloud-dubbo-consumer
+          predicates:
+            - Path=/mina_gateway_dubbo_consumer/**
           filters:
             - StripPrefix=1
 ---
@@ -48,9 +61,9 @@ mina:
         enable: true
       canary:
         # 启用金丝雀负载，对符合条件的流量打标，默认关闭
-        enable: false
+        enable: true
 #        # 使用指定ip模式，默认透传请求头方式
-#        type: ip
+        type: default
 ---
 # 功能负载均衡金丝雀功能相关配置
 mina:
@@ -58,11 +71,33 @@ mina:
     loadbalancer:
       canary:
         # 启用金丝雀路由，默认关闭
-        enable: false
+        enable: true
         # 指定严格模式（默认），LOOSE 宽松模式采取优先使用金丝雀实例的策略
         mode: STRICT
-#        type:
+        type:
 #          # 指定按照ip模式路由
 #          enable: ip
 #          # 指定金丝雀服务器，多个ip用","分隔
-#          ip-address: 192.168.0.104
+#          ip-address: 172.10.10.148
+          # 指定按照默认（请求头）模式路由
+          enable: default
+---
+# 网关扩展功能（日志、金丝雀）相关配置
+mina:
+  cloud:
+    gateway:
+      logger:
+        # 启用网关日志，默认启用
+        enable: true
+      canary:
+        # 启用金丝雀负载，对符合条件的流量打标，默认关闭
+        enable: false
+        #        # 使用指定ip模式，默认透传请求头方式
+        rule:
+          enable: header #  host
+#          config-param:
+        loadbalancer:
+          enable: metadata # host
+#          ip-address: 172.10.10.148
+          # 指定严格模式（默认），LOOSE 宽松模式采取优先使用金丝雀实例的策略
+          mode: STRICT

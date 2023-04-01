@@ -1,0 +1,8 @@
+# 默认支持开启网关金丝雀灰度功能
+mina:
+  cloud:
+    gateway:
+      canary:
+        enable: true
+
+

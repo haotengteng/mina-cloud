@@ -21,6 +21,7 @@
         <module>mina-cloud-example-dubbo-consumer</module>
         <module>mina-cloud-example-gateway</module>
         <module>mina-cloud-example-sentinel</module>
+        <module>mina-cloud-example-dubbo-consumer-generic</module>
     </modules>
 
 </project>

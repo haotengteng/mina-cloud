@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * @author Created by haoteng on 2022/8/15.
  */
-@FeignClient(name = "mina-provider", fallback = FooServiceFallback.class)
+@FeignClient(name = "mina-provider")
 public interface FooService {
     @GetMapping("foo/ping")
     MinaWebResult<String> getFoo(@RequestParam("ping") String ping);

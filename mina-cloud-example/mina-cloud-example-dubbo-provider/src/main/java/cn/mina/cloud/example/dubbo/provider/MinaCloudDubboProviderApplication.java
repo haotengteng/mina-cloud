@@ -11,5 +11,4 @@ public class MinaCloudDubboProviderApplication {
     public static void main(String[] args) throws InterruptedException {
         MinaBootApplication.run(MinaCloudDubboProviderApplication.class, args);
     }
-
 }

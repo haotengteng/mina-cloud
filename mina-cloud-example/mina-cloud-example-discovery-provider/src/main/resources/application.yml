@@ -8,10 +8,11 @@ spring:
         username: nacos
         password: nacos
         namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
-        group: mina-cloud1
+        group: mina-cloud
 project:
   name: ${spring.application.name}
-
+server:
+  port: 8881
 ---
 # 开启金丝雀负载均衡
 mina:

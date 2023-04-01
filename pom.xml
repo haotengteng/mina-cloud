@@ -15,6 +15,7 @@
         <module>mina-cloud-dubbo</module>
         <module>mina-cloud-loadbalancer</module>
         <module>mina-cloud-sentinel</module>
+        <module>mina-cloud-common</module>
     </modules>
     <packaging>pom</packaging>
     <name>mina-cloud-parent</name>
@@ -57,6 +58,13 @@
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
                 <version>2021.0.1.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-dependencies-bom</artifactId>
+                <version>3.1.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

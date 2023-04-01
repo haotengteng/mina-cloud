@@ -12,6 +12,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>cn.mina.cloud</groupId>
+            <artifactId>mina-cloud-common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
@@ -19,10 +23,6 @@
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.mina.boot</groupId>
-            <artifactId>mina-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.mina.boot</groupId>

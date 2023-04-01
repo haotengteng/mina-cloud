@@ -7,7 +7,7 @@ spring:
         server-addr: 127.0.0.1:8848
         username: nacos
         password: nacos
-#        namespace: 52e671fa-26ea-48b5-938b-865e935f527f
+        namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
         group: mina-cloud #项目名
 project:
   name: mina-consumer
@@ -18,3 +18,12 @@ server:
 #    file:
 #      path: ./
 #      name: ${spring.application.name}
+
+# 开启金丝雀负载均衡
+mina:
+  cloud:
+    discovery:
+      canary:
+        enable: true
+        # 指定自定义流量标记
+        tag: 920104

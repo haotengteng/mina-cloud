@@ -1,4 +1,4 @@
-package cn.mina.cloud.loadbalancer.canary;
+package cn.mina.cloud.common.canary;
 
 /**
  *
@@ -9,7 +9,7 @@ package cn.mina.cloud.loadbalancer.canary;
  *
  * @author Created by haoteng on 2023/3/9.
  */
-public enum LoadBalanceMode {
+public enum CanaryMode {
     /**
      * 严格模式
      */
@@ -21,7 +21,7 @@ public enum LoadBalanceMode {
 
     private String value;
 
-    LoadBalanceMode(String value) {
+    CanaryMode(String value) {
         this.value = value;
     }
 

@@ -4,14 +4,10 @@ import cn.mina.boot.web.common.context.MinaWebResult;
 import cn.mina.boot.web.common.context.MinaWebTools;
 import cn.mina.boot.web.common.exception.MinaGlobalException;
 import lombok.SneakyThrows;
-import org.apache.commons.lang3.ThreadUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.Duration;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @author Created by haoteng on 2022/8/15.
@@ -21,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class FooController {
 
     @GetMapping("ping")
-    public MinaWebResult<String> test(String ping) throws InterruptedException {
+    public MinaWebResult<String> getFoo(@RequestParam String ping) {
 //        throw new MinaGlobalException("ceshi");
 //        TimeUnit.SECONDS.sleep(1);
         return MinaWebTools.response.success("pong");
