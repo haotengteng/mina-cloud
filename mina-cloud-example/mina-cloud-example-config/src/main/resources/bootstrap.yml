@@ -1,16 +1,29 @@
+logging:
+  file:
+    path: ./
+    name: mina-example-web-config.log
 spring:
   application:
-    name: mina-config
+    name: mina-boot
+  profiles:
+    active: dev
   cloud:
     nacos:
-      server-addr: 127.0.0.1:8848
+      server-addr: localhost:8848
       config:
         username: nacos
         password: nacos
-        namespace: 52e671fa-26ea-48b5-938b-865e935f527f
-        group: mina
+        namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
+        name: ${spring.application.name}
+        group: mina-boot
         file-extension: yaml
-        shared-configs[0]:
-          data-id: mina-common-config.yaml
-          group: mina
-          refresh: true
+        refresh-enabled: true
+#        shared-configs[0]:
+#          data-id: mina-boot-base.yaml
+#          group: mina
+#          refresh: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh

@@ -1,6 +1,7 @@
 package cn.mina.cloud.config.controller;
 
 import lombok.Data;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -8,9 +9,14 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 
 
-@ConfigurationProperties(prefix = "user")
+
+
+
+
+@ConfigurationProperties(prefix = "mina.user")
 @Data
 public class ExampleConfig {
+
     private String name;
 
     private Integer age;

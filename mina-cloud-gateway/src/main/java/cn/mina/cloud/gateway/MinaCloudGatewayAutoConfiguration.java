@@ -3,7 +3,7 @@ package cn.mina.cloud.gateway;
 import cn.mina.boot.support.YmlPropertySourceFactory;
 import cn.mina.cloud.gateway.canary.CanaryLoadbalancerRule;
 import cn.mina.cloud.gateway.canary.DefaultHeaderCanaryLoadbalancerRule;
-import cn.mina.cloud.gateway.canary.DefaultHostCanaryLoadbalancerRuleAbstract;
+import cn.mina.cloud.gateway.canary.DefaultHostCanaryLoadbalancerRule;
 import cn.mina.cloud.gateway.filter.CanaryLoadBalancerClientFilter;
 import cn.mina.cloud.gateway.filter.GatewayLogFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -67,7 +67,7 @@ public class MinaCloudGatewayAutoConfiguration {
     @ConditionalOnBean(value = CanaryLoadBalancerClientFilter.class)
     @ConditionalOnProperty(prefix = "mina.cloud.gateway.canary.rule", name = "enable", havingValue = "host")
     public CanaryLoadbalancerRule hostCanaryLoadbalancerRule() {
-        return new DefaultHostCanaryLoadbalancerRuleAbstract();
+        return new DefaultHostCanaryLoadbalancerRule();
     }
 
 

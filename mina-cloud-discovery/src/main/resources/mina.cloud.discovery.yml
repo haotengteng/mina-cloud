@@ -1,6 +1,6 @@
-# 默认支持开启网关金丝雀灰度功能
+# 默认不是灰度节点
 mina:
   cloud:
-    gateway:
+    discovery:
       canary:
-        enable: true
+        enable: false

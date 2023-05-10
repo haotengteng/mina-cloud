@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-cn.mina.boot.config.MinaConfigAutoConfiguration
+cn.mina.cloud.config.MinaConfigAutoConfiguration

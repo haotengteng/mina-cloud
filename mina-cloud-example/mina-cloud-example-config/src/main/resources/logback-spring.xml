@@ -16,7 +16,7 @@
     <root level="info">
 <!--        <appender-ref ref="file-appender-skywalking"/>-->
 <!--        <appender-ref ref="log-appender-skywalking"/>-->
-        <appender-ref ref="console"/>
+        <appender-ref ref="console-appender"/>
     </root>
 
 </configuration>

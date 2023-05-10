@@ -15,7 +15,7 @@ import org.springframework.context.annotation.PropertySource;
  * @author Created by haoteng on 2023/3/15.
  */
 @Configuration
-@PropertySource(value = "classpath:mina.cloud.sentinel.gateway.yml", factory = YmlPropertySourceFactory.class)
+@PropertySource(value = "classpath:mina-cloud-sentinel-gateway.yml", factory = YmlPropertySourceFactory.class)
 public class MinaCloudSentinelAutoConfiguration {
 
 

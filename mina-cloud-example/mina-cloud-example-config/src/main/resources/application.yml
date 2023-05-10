@@ -1,4 +1,25 @@
-logging:
-  file:
-    path: ./
-    name: mina-example-web-config.log
+#logging:
+#  file:
+#    path: ./
+#    name: mina-example-web-config.log
+#spring:
+#  application:
+#    name: mina-boot
+#  profiles:
+#    active: dev
+#  config:
+#    import:
+#      - optional:nacos:mina-boot.yaml?group=mina-boot&refreshEnabled=true
+#  cloud:
+#    nacos:
+#      server-addr: localhost:8848
+#      config:
+#        username: nacos
+#        password: nacos
+#        namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa
+#        group: mina-boot
+#        file-extension: yaml
+##        shared-configs[0]:
+##          data-id: mina-boot-base.yaml
+##          group: mina
+##          refresh: true

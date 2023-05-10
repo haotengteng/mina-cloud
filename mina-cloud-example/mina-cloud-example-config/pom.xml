@@ -21,4 +21,27 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id><!-- 开发环境 -->
+            <properties>
+                <active.target.profile>dev</active.target.profile>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>uat</id><!-- 测试环境 -->
+            <properties>
+                <active.target.profile>uat</active.target.profile>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id><!-- 生产环境 -->
+            <properties>
+                <active.target.profile>prod</active.target.profile>
+            </properties>
+        </profile>
+    </profiles>
 </project>

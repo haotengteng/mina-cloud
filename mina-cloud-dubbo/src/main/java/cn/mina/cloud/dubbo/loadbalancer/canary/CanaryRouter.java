@@ -35,7 +35,6 @@ public class CanaryRouter extends AbstractRouter {
         String canaryEnable = RpcContext.getServerAttachment().getAttachment(GATEWAY_CANARY_ENABLE_HEADER);
 
         if (Constant.Boolean.TRUE.equals(canaryEnable)) {
-            System.out.println("==========CanaryRouter============");
             String canaryType = RpcContext.getServerAttachment().getAttachment(GATEWAY_CANARY_TYPE_HEADER);
             AbstractCanaryRule canaryRule = AbstractCanaryRule.getInstances(canaryType);
             return canaryRule.route(invokers, url, invocation, needToPrintMessage);
