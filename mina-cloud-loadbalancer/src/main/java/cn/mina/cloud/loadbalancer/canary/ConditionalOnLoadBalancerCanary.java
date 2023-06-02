@@ -1,5 +1,6 @@
 package cn.mina.cloud.loadbalancer.canary;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 
 import java.lang.annotation.ElementType;
@@ -12,6 +13,7 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
-@ConditionalOnProperty(prefix = "mina.cloud.gateway.canary", name = "enable", havingValue = "true")
+@ConditionalOnExpression("#{'true'.equals(environment.getProperty('mina.cloud.gateway.canary.enable'))" +
+        "|| #{'true'.equals(environment.getProperty('mina.cloud.discovery.canary.enable'))}")
 public @interface ConditionalOnLoadBalancerCanary {
 }
