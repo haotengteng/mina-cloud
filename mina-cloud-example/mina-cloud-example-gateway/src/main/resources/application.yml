@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848 # 注册到的nacos地址
+        server-addr: 172.10.10.148:8848 # 注册到的nacos地址
         username: nacos
         password: nacos
         namespace: 0efc12c9-8f03-4a24-9e22-18c473db25fa

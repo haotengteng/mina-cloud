@@ -1,6 +1,6 @@
 package cn.mina.cloud.example.dubbo.provider;
 
-import cn.mina.boot.MinaBootApplication;
+import cn.mina.boot.MinaApplication;
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class MinaCloudDubboProviderApplication {
 
     public static void main(String[] args) throws InterruptedException {
-        MinaBootApplication.run(MinaCloudDubboProviderApplication.class, args);
+        MinaApplication.run(MinaCloudDubboProviderApplication.class, args);
     }
 }

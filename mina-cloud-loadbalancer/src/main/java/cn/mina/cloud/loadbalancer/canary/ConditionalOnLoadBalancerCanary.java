@@ -14,6 +14,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.TYPE, ElementType.METHOD})
 @ConditionalOnExpression("#{'true'.equals(environment.getProperty('mina.cloud.gateway.canary.enable'))" +
-        "|| #{'true'.equals(environment.getProperty('mina.cloud.discovery.canary.enable'))}")
+        "|| 'true'.equals(environment.getProperty('mina.cloud.discovery.canary.enable'))}")
 public @interface ConditionalOnLoadBalancerCanary {
 }

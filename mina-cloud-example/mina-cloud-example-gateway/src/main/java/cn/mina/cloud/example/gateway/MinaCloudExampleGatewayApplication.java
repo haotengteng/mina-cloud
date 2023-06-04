@@ -1,6 +1,6 @@
 package cn.mina.cloud.example.gateway;
 
-import cn.mina.boot.MinaBootApplication;
+import cn.mina.boot.MinaApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
@@ -9,7 +9,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 public class MinaCloudExampleGatewayApplication {
 
     public static void main(String[] args) {
-        MinaBootApplication.run(MinaCloudExampleGatewayApplication.class, args);
+        MinaApplication.run(MinaCloudExampleGatewayApplication.class, args);
     }
 
 }

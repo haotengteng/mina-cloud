@@ -1,6 +1,6 @@
 package cn.mina.cloud.example.discovery.consumer;
 
-import cn.mina.boot.MinaBootApplication;
+import cn.mina.boot.MinaApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class MinaCloudExampleConsumerApplication {
 
 	public static void main(String[] args) {
-		MinaBootApplication.run(MinaCloudExampleConsumerApplication.class, args);
+		MinaApplication.run(MinaCloudExampleConsumerApplication.class, args);
 	}
 
 }

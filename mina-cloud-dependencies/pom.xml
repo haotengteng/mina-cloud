@@ -93,4 +93,18 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2244391-release-zNHCbw/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2244391-snapshot-OqPMVa/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
