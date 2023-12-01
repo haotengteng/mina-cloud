@@ -6,6 +6,7 @@
         <groupId>cn.mina.cloud</groupId>
         <artifactId>mina-cloud-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version> <!-- lookup parent from repository -->
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>mina-cloud-discovery</artifactId>
     <name>mina-cloud-discovery</name>

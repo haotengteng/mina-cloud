@@ -1,0 +1,33 @@
+name: "deployment-gateway"
+serviceType: "deployment"
+containers:
+  -
+    name: "example-gateway"
+    hub: null
+    dev:
+      debug: {}
+      image: "registry.cn-hangzhou.aliyuncs.com/haot_repo/mina-cloud-example-gateway:0.0.1-SNAPSHOT"
+      shell: ""
+      workDir: ""
+      storageClass: ""
+      resources: null
+      persistentVolumeDirs: []
+      command:
+          run: []
+          debug:
+              - mvn
+              - package
+              - -Dmaven.test.skip=true
+              - '&&'
+              - mvn
+              - -e
+              - spring-boot:run
+              - -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5345"
+      debug:
+          remoteDebugPort: 5345
+          language: java
+      hotReload: true
+      sync: null
+      env: []
+      portForward:
+          - 9999:8888

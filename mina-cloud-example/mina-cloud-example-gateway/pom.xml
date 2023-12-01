@@ -23,10 +23,10 @@
             <groupId>cn.mina.cloud</groupId>
             <artifactId>mina-cloud-loadbalancer</artifactId>
         </dependency>
-        <dependency>
-            <groupId>cn.mina.cloud</groupId>
-            <artifactId>mina-cloud-sentinel-gateway</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>cn.mina.cloud</groupId>-->
+<!--            <artifactId>mina-cloud-sentinel-gateway</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
    <build>
 

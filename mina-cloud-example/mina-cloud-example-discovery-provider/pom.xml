@@ -38,7 +38,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.7.2</version>
                 <configuration>
-                    <mainClass>cn.mina.cloud.example.gateway.MinaCloudExampleGatewayApplication</mainClass>
+                    <mainClass>cn.mina.cloud.example.discovery.provider.MinaCloudExampleProviderApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

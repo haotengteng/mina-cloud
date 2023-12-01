@@ -1,5 +1,5 @@
 #FROM java:8
-FROM registry.cn-hangzhou.aliyuncs.com/haot_repo/jdk8-mvn:v3
+FROM registry.cn-hangzhou.aliyuncs.com/haot_repo/jdk8-mvn:v4
 ARG JAR_FILE
 ADD target/${JAR_FILE} app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]

@@ -4,6 +4,7 @@ import cn.mina.boot.web.common.context.MinaWebResult;
 import cn.mina.boot.web.common.context.MinaWebTools;
 import cn.mina.boot.web.common.exception.MinaGlobalException;
 import lombok.SneakyThrows;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,6 +23,9 @@ public class FooController {
 //        TimeUnit.SECONDS.sleep(1);
         return MinaWebTools.response.success("pong");
     }
+
+    @Autowired()
+    private Integer q;
 
     @SneakyThrows
     @GetMapping("fallback")
